@@ -1,8 +1,5 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import 'Constant/constant.dart';
 
 class FourthScreen extends StatefulWidget {
@@ -36,10 +33,10 @@ class _FourthScreenState extends State<FourthScreen> {
             children: [
               Column(
                 children: [
-                  SizedBox(
-                    height: 300,
+                  const SizedBox(
+                    height: 100,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   const Center(
@@ -49,7 +46,7 @@ class _FourthScreenState extends State<FourthScreen> {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Card(
@@ -76,12 +73,12 @@ class _FourthScreenState extends State<FourthScreen> {
                             'assets/images/Group.png',
                             width: 40,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 50,
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
+                            children: const [
                               SizedBox(
                                 height: 20,
                               ),
@@ -102,7 +99,6 @@ class _FourthScreenState extends State<FourthScreen> {
                           ),
                         ],
                       )),
-
                   Card(
                       elevation: 0,
                       shape: RoundedRectangleBorder(
@@ -128,12 +124,12 @@ class _FourthScreenState extends State<FourthScreen> {
                             'assets/images/Vector.png',
                             width: 40,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 50,
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
+                            children: const [
                               SizedBox(
                                 height: 20,
                               ),
@@ -154,28 +150,19 @@ class _FourthScreenState extends State<FourthScreen> {
                           ),
                         ],
                       )),
-
-                  // Container(
-                  //     child: Row(
-                  //   children: [
-                  //     Text(
-                  //         "Loem ipsum dolor sit amet,\nconsectetur adipiscing"),
-                  //   ],
-                  // )),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   InkWell(
                     onTap: () {},
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 5),
-                      // width: 00,
+                      margin: const EdgeInsets.symmetric(horizontal: 5),
                       height: 50,
                       decoration: BoxDecoration(
                         color: buttonColor,
                         borderRadius: BorderRadius.circular(0),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           ' CONTINUE',
                           style: TextStyle(color: Colors.white, fontSize: 20),

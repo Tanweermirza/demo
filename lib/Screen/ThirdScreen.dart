@@ -37,7 +37,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
             children: [
               Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   const Center(
@@ -47,23 +47,21 @@ class _ThirdScreenState extends State<ThirdScreen> {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 16,
                   ),
                   Text("Code is sent to ${widget.mobile}"),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   OtpTextField(
                     numberOfFields: 6,
-                    borderColor: Color(0xFF512DA8),
+                    borderColor: const Color(0xFF512DA8),
                     //set to true to show as box or false to show as dash
                     showFieldAsBox: true,
                     //runs when a code is typed in
-                    onCodeChanged: (String code) {
-                      //handle validation or checks here
-                    },
-                    //runs when every textfield is filled
+                    onCodeChanged: (String code) {},
+
                     onSubmit: (String verificationCode) {
                       setState(() {
                         otp = verificationCode;
@@ -73,14 +71,14 @@ class _ThirdScreenState extends State<ThirdScreen> {
                           context: context,
                           builder: (context) {
                             return AlertDialog(
-                              title: Text("Verification Code"),
+                              title: const Text("Verification Code"),
                               content:
                                   Text('Code entered is $verificationCode'),
                             );
                           });
                     }, // end onSubmit
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   RichText(
@@ -91,7 +89,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
                       children: <TextSpan>[
                         TextSpan(
                           text: 'Request Again',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: const TextStyle(fontWeight: FontWeight.bold),
                           recognizer: TapGestureRecognizer()
                             ..onTap =
                                 () => {authController.sentOtp(widget.mobile)},
@@ -99,27 +97,22 @@ class _ThirdScreenState extends State<ThirdScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  // SizedBox(
-                  //   height: 20,
-                  // ),
                   InkWell(
                     onTap: () {
-                      // Get.to(FourthScreen());
-                      // authController.otpVerify(otp, widget.id);
                       AuthController.instance.otpVerify(otp, widget.id);
                     },
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 50),
+                      margin: const EdgeInsets.symmetric(horizontal: 50),
                       // width: 00,
                       height: 50,
                       decoration: BoxDecoration(
                         color: buttonColor,
                         borderRadius: BorderRadius.circular(0),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           'VERIFY AND CONTINUE',
                           style: TextStyle(color: Colors.white, fontSize: 20),

@@ -1,7 +1,5 @@
 import 'package:demo1/Screen/SecondScreen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 
 import 'Constant/constant.dart';
@@ -26,15 +24,13 @@ class _FirstScreen1State extends State<FirstScreen1> {
             children: [
               Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 200,
                   ),
-                  Container(
-                    child: Center(
-                      child: Image.asset('assets/images/image.png'),
-                    ),
+                  Center(
+                    child: Image.asset('assets/images/image.png'),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   const Center(
@@ -44,23 +40,23 @@ class _FirstScreen1State extends State<FirstScreen1> {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 16,
                   ),
-                  Text(
+                  const Text(
                       "You can change the language \n                  at any time"),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    margin: EdgeInsets.symmetric(horizontal: 50),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    margin: const EdgeInsets.symmetric(horizontal: 50),
                     decoration: BoxDecoration(border: Border.all()),
                     child: DropdownButton(
                       isExpanded: true,
-                      underline: SizedBox(),
-                      hint:
-                          Text('Select Language'), // Not necessary for Option 1
+                      underline: const SizedBox(),
+                      hint: const Text(
+                          'Select Language'), // Not necessary for Option 1
                       value: language,
                       onChanged: (newValue) {
                         setState(() {
@@ -69,28 +65,27 @@ class _FirstScreen1State extends State<FirstScreen1> {
                       },
                       items: languageList.map((val) {
                         return DropdownMenuItem(
-                          child: new Text(val),
                           value: val,
+                          child: Text(val),
                         );
                       }).toList(),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(SecondScreen());
+                      Get.to(const SecondScreen());
                     },
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 50),
-                      // width: 00,
+                      margin: const EdgeInsets.symmetric(horizontal: 50),
                       height: 50,
                       decoration: BoxDecoration(
                         color: buttonColor,
                         borderRadius: BorderRadius.circular(0),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           'NEXT',
                           style: TextStyle(color: Colors.white, fontSize: 20),

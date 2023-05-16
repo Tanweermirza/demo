@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:demo1/Screen/FirstScreen1.dart';
 import 'package:demo1/Screen/FourthScreen.dart';
 import 'package:demo1/Screen/ThirdScreen.dart';
@@ -14,14 +13,13 @@ class AuthController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     appInit();
   }
 
   appInit() {
-    Future.delayed(Duration(milliseconds: 100), () {
-      Get.to(FirstScreen1());
+    Future.delayed(const Duration(milliseconds: 100), () {
+      Get.to(const FirstScreen1());
     });
     // auth.userChanges().listen((User? user) {
 
