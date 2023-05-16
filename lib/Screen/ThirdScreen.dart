@@ -1,8 +1,8 @@
 import 'package:demo1/Controller/authController.dart';
-import 'package:demo1/Screen/FourthScreen.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-import 'package:get/get.dart';
+import 'Constant/constant.dart';
 
 class ThirdScreen extends StatefulWidget {
   final String mobile;
@@ -37,9 +37,6 @@ class _ThirdScreenState extends State<ThirdScreen> {
             children: [
               Column(
                 children: [
-                  SizedBox(
-                    height: 300,
-                  ),
                   SizedBox(
                     height: 30,
                   ),
@@ -86,7 +83,22 @@ class _ThirdScreenState extends State<ThirdScreen> {
                   SizedBox(
                     height: 20,
                   ),
-                  Text("Didn't is receive the code?"),
+                  RichText(
+                    text: TextSpan(
+                      text: "Didn't receive the code? ",
+                      style:
+                          const TextStyle(color: Colors.black, fontSize: 12.0),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: 'Request Again',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap =
+                                () => {authController.sentOtp(widget.mobile)},
+                        ),
+                      ],
+                    ),
+                  ),
                   SizedBox(
                     height: 20,
                   ),
@@ -96,14 +108,15 @@ class _ThirdScreenState extends State<ThirdScreen> {
                   InkWell(
                     onTap: () {
                       // Get.to(FourthScreen());
-                      authController.otpVerify(otp, widget.id);
+                      // authController.otpVerify(otp, widget.id);
+                      AuthController.instance.otpVerify(otp, widget.id);
                     },
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 100),
+                      margin: EdgeInsets.symmetric(horizontal: 50),
                       // width: 00,
                       height: 50,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: buttonColor,
                         borderRadius: BorderRadius.circular(0),
                       ),
                       child: Center(

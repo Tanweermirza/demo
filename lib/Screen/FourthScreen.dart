@@ -1,6 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'Constant/constant.dart';
 
 class FourthScreen extends StatefulWidget {
   const FourthScreen({super.key});
@@ -13,6 +16,19 @@ class _FourthScreenState extends State<FourthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
       body: Stack(
         children: [
           ListView(
@@ -152,11 +168,11 @@ class _FourthScreenState extends State<FourthScreen> {
                   InkWell(
                     onTap: () {},
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 100),
+                      margin: EdgeInsets.symmetric(horizontal: 5),
                       // width: 00,
                       height: 50,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: buttonColor,
                         borderRadius: BorderRadius.circular(0),
                       ),
                       child: Center(

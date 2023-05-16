@@ -1,6 +1,10 @@
+import 'package:demo1/Screen/SecondScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
+
+import 'Constant/constant.dart';
 
 class FirstScreen1 extends StatefulWidget {
   const FirstScreen1({super.key});
@@ -23,7 +27,7 @@ class _FirstScreen1State extends State<FirstScreen1> {
               Column(
                 children: [
                   SizedBox(
-                    height: 300,
+                    height: 200,
                   ),
                   Container(
                     child: Center(
@@ -50,7 +54,7 @@ class _FirstScreen1State extends State<FirstScreen1> {
                   ),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 20),
-                    margin: EdgeInsets.symmetric(horizontal: 100),
+                    margin: EdgeInsets.symmetric(horizontal: 50),
                     decoration: BoxDecoration(border: Border.all()),
                     child: DropdownButton(
                       isExpanded: true,
@@ -75,18 +79,20 @@ class _FirstScreen1State extends State<FirstScreen1> {
                     height: 20,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(SecondScreen());
+                    },
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 100),
+                      margin: EdgeInsets.symmetric(horizontal: 50),
                       // width: 00,
                       height: 50,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: buttonColor,
                         borderRadius: BorderRadius.circular(0),
                       ),
                       child: Center(
                         child: Text(
-                          'Submit',
+                          'NEXT',
                           style: TextStyle(color: Colors.white, fontSize: 20),
                         ),
                       ),
